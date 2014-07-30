@@ -9,19 +9,35 @@ WP Mail Bank reconfigures the wp_mail() function and make it more enhanced.
 
 == Description ==
 
+### WordPress Mail Bank - Best WP SMTP Mailer
+
 This plugin reconfigures the wp_mail() function nd make it more enhanced to use SMTP instead of mail() with various options available.
 
-Features :
 
-* Specify the From name
-* Specify the Email Address for outgoing email.
-* Choose to send mail by SMTP or PHP's mail() function.
-* Specify an SMTP host
-* Specify an SMTP port
-* Choose SSL / TLS encryption
-* Choose to use SMTP authentication or not
+###IMPORTANT: If you think you found a bug in WP Mail Bank or have any problem or question concerning WP Mail Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com).  
+
+
+Key Features :
+
+* Specify the From Name that emails should be sent from.
+* Specify the Email Address that emails should be sent from.
+* Specify Transporder to be used for sending out email i.e SMTP or Php mail() function.
+* Specify Return Path of your Email or Keep it same as your email address.
+* Specify Word Wrap at which the string will be wrapped in email per line.
+* Specify SMTP Host to be used for sending your emails.
+* Specify SMTP Port to be used for sending your emails. 
 * Specify an SMTP username and password.
+* Specify Encryption type.
+* Specify to use Authentication or disable Authentication.
+* Specify SMTP Keep Alive to keep SMTP Authentication Session open or closed after sending emails.
 
+
+> #### ** Default Ports **
+> * SMTP Server (Outgoing Messages) - Non-Encrypted - Port 25 ( or 587 )
+> * SMTP Server (Outgoing Messages) - Secure (TLS) - Port 587 
+> * SMTP Server (Outgoing Messages) - Secure (SSL) - Port 465 
+
+Note : These Ports may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 == Installation ==
 
 ### Minimum requirements.  

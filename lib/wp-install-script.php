@@ -7,24 +7,24 @@ if (count($wpdb->get_var("SHOW TABLES LIKE '" . wp_mail_bank() . "'")) == 0)
 	create_table_mail_detail();
 	$wpdb->query
 	(
-			$wpdb->prepare
-			(
-				"INSERT INTO " . wp_mail_bank() . " (from_name, from_email,mailer_type,return_path,return_email,smtp_host,smtp_port,word_wrap,encryption,smtp_keep_alive,authentication,smtp_username,smtp_password)
-				VALUES(%s, %s, %d, %d, %s, %s, %d, %d, %d, %d, %d, %s, %s)",
-				"Wordpress",
-				get_option("admin_email"),
-				1,
-				1,
-				"",
-				"",
-				25,
-				50,
-				0,
-				1,
-				0,
-				"",
-				""
-			)
+		$wpdb->prepare
+		(
+			"INSERT INTO " . wp_mail_bank() . " (from_name, from_email,mailer_type,return_path,return_email,smtp_host,smtp_port,word_wrap,encryption,smtp_keep_alive,authentication,smtp_username,smtp_password)
+			VALUES(%s, %s, %d, %d, %s, %s, %d, %d, %d, %d, %d, %s, %s)",
+			"Wordpress",
+			get_option("admin_email"),
+			1,
+			1,
+			"",
+			"",
+			25,
+			50,
+			0,
+			1,
+			0,
+			"",
+			""
+		)
 	);
 }
 function create_table_mail_detail()
@@ -46,6 +46,6 @@ function create_table_mail_detail()
 			smtp_password VARCHAR(100),
 			PRIMARY KEY (id)
 			) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE utf8_general_ci";
-		dbDelta($sql);		
+		dbDelta($sql);
 }
 ?>

@@ -12,7 +12,8 @@ Author URI: http://tech-banker.com
 /////////////////////////////////////  Define  WP Mail Bank Constants  ////////////////////////////////////////
 
 if (!defined("MAIL_BK_PLUGIN_DIR")) define("MAIL_BK_PLUGIN_DIR",  plugin_dir_path( __FILE__ ));
-if (!defined("")) define("mail_bank", "mail-bank");
+if (!defined("MAIL_BK_PLUGIN_DIRNAME")) define("MAIL_BK_PLUGIN_DIRNAME", plugin_basename(dirname(__FILE__)));
+if (!defined("mail_bank")) define("mail_bank", "mail-bank");
 
 global $phpmailer;
 
@@ -101,6 +102,15 @@ if(isset($_REQUEST["action"]))
 		break;
 	}
 }
+/////////////////////////////////////  Call Languages for Multi-Lingual ////////////////////////////////////////
+
+function mail_bank_plugin_load_text_domain()
+{
+	if (function_exists("load_plugin_textdomain"))
+	{
+		load_plugin_textdomain(mail_bank, false, MAIL_BK_PLUGIN_DIRNAME . "/lang");
+	}
+}
 /////////////////////////////////////  Call Install Script on Plugin Activation ////////////////////////////////////////
 
 function plugin_install_script_for_mail_bank()
@@ -108,6 +118,7 @@ function plugin_install_script_for_mail_bank()
 	include_once MAIL_BK_PLUGIN_DIR . "/lib/wp-install-script.php";
 }
 add_action('phpmailer_init','wp_mail_bank_configure');
+add_action("plugins_loaded", "mail_bank_plugin_load_text_domain");
 add_action("admin_menu","create_global_menus_for_mail_bank");
 add_action("admin_menu","backend_plugin_js_scripts_mail_bank");
 add_action("admin_init","backend_plugin_css_scripts_mail_bank");

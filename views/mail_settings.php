@@ -216,7 +216,7 @@ else
 									</div>
 									<div class="layout-span5">
 										<div class="layout-control-group">
-											<label class="layout-control-label"><?php _e("SMTP Passowrd", mail_bank); ?> : <span class="error">*</span></label>
+											<label class="layout-control-label"><?php _e("SMTP Password", mail_bank); ?> : <span class="error">*</span></label>
 											<div class="layout-controls">
 												<input type="password" id="ux_txt_password" placeholder="Please enter Password"   name="ux_txt_password" style="margin-left: -26px;" class="layout-span12"  value="<?php echo isset($email_data->smtp_password) ? $email_data->smtp_password : "" ;?>">
 											</div>
