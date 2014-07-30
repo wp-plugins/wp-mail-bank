@@ -45,6 +45,13 @@ After downloading the ZIP file,
 
 If any problem occurs, please contact us at [support@tech-banker.com](mailto:support@tech-banker.com).
 
+
+== Screenshots ==
+
+1. Settings Page with Php Mailer as Transporder for sending Emails from your WordPress Site
+2. Settings Page with SMTP as Transporder for sending Emails from your WordPress Site
+3. Send Test Email Screen
+4. Debugging Output Console Log
 == Changelog ==
 
 = 1.0 =
