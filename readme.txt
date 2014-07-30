@@ -5,7 +5,7 @@ Requires at least: 2.7
 Tested up to: 3.9.1
 Stable tag: 1.0
 
-WP Mail Bank reconfigures the wp_mail() function and make it more enhanced.
+WP Mail Bank reconfigures the PHPMailer and make it more enhanced with advanced smtp settings options.
 
 == Description ==
 
