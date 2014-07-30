@@ -1,6 +1,6 @@
 ﻿=== WP Mail Bank - WP SMTP Mailer ===
 Contributors: contact-banker
-Tags: mail, smtp, wp_mail, mailer, phpmailer, admin, plugins
+Tags: mail, smtp, wp_mail, mailer, phpmailer, admin, plugin, post, email, gmail, mail, mail smtp, outgoing mail, phpmailer, privacy, security, sendmail, smtp, ssl, tls, wordpress smtp, wp smtp, wp-phpmailer, wp_mail
 Requires at least: 2.7
 Tested up to: 3.9.1
 Stable tag: 1.0
