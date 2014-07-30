@@ -1,4 +1,4 @@
-﻿=== WP Mail Bank - WP SMTP Mailer ===
+﻿=== WP Mail Bank - PHP & SMTP Mailer ===
 Contributors: contact-banker
 Tags: admin, email, gmail, mail, mail smtp, Mailer, outgoing mail, phpmailer, plugin, Post, posts, privacy, security, sendmail, smtp, ssl, tls, wordpress smtp, wp smtp, wp-phpmailer, wp_mail
 Requires at least: 2.7
@@ -9,7 +9,7 @@ WP Mail Bank reconfigures the wp_mail() function and make it more enhanced.
 
 == Description ==
 
-### WordPress Mail Bank - Best WP SMTP Mailer
+### WordPress Mail Bank - Best PHP & SMTP Mailer
 
 This plugin reconfigures the wp_mail() function nd make it more enhanced to use SMTP instead of mail() with various options available.
 
