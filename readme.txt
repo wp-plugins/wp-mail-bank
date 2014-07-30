@@ -33,75 +33,156 @@ This plugin reconfigures the wp_mail() function nd make it more enhanced to use 
 
 
 > #### ** Default Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Non-Encrypted - Port 25 ( or 587 )
-> * SMTP Server (Outgoing Messages) - Secure (TLS) - Port 587 
-> * SMTP Server (Outgoing Messages) - Secure (SSL) - Port 465 
+> * SMTP Server  - Non-Encrypted - Port 25 ( or 587 )
+> * SMTP Server  - Secure (TLS) - Port 587 
+> * SMTP Server  - Secure (SSL) - Port 465 
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** Googlemail - Gmail Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : smtp.gmail.com - Secure (SSL) - Port 465 
-> * SMTP Server (Outgoing Messages) - Host : smtp.gmail.com - Secure (TLS) - Port 587 
+> * SMTP Server - Host : smtp.gmail.com - Secure (SSL) - Port 465 
+> * SMTP Server - Host : smtp.gmail.com - Secure (TLS) - Port 587 
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** Outlook.com Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : smtp.live.com - Secure (TLS) - Port 587
+> * SMTP Server - Host : smtp.live.com - Secure (TLS) - Port 587
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** Office365.com Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : smtp.office365.com - Secure (TLS) - Port 587
+> * SMTP Server - Host : smtp.office365.com - Secure (TLS) - Port 587
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** Yahoo Mail Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : smtp.mail.yahoo.com - Secure (SSL) - Port 465
+> * SMTP Server - Host : smtp.mail.yahoo.com - Secure (SSL) - Port 465
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** Yahoo Mail Plus Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : plus.smtp.mail.yahoo.com - Secure (SSL) - Port 465
+> * SMTP Server - Host : plus.smtp.mail.yahoo.com - Secure (SSL) - Port 465
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** Yahoo UK Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : smtp.mail.yahoo.co.uk - Secure (SSL) - Port 465
+> * SMTP Server - Host : smtp.mail.yahoo.co.uk - Secure (SSL) - Port 465
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** Yahoo Deutschland Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : smtp.mail.yahoo.com - Secure (SSL) - Port 465
+> * SMTP Server - Host : smtp.mail.yahoo.com - Secure (SSL) - Port 465
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** Yahoo Australia/New Zeland Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : smtp.mail.yahoo.com.au - Secure (SSL) - Port 465
+> * SMTP Server - Host : smtp.mail.yahoo.com.au - Secure (SSL) - Port 465
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** O2 Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : smtp.o2.ie - Non-Encrypted - Port 25
+> * SMTP Server - Host : smtp.o2.ie - Non-Encrypted - Port 25
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** O2.uk Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : smtp.o2.co.uk - Non-Encrypted - Port 25
+> * SMTP Server - Host : smtp.o2.co.uk - Non-Encrypted - Port 25
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** AT&T Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : smtp.att.yahoo.com - Secure (SSL) - Port 465
+> * SMTP Server - Host : smtp.att.yahoo.com - Secure (SSL) - Port 465
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** NTL @ntlworld.com Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : smtp.ntlworld.com - Secure (SSL) - Port 465
+> * SMTP Server - Host : smtp.ntlworld.com - Secure (SSL) - Port 465
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
 > #### ** BT Connect Ports & Settings **
-> * SMTP Server (Outgoing Messages) - Host : pop3.btconnect.com - Non-Encrypted - Port 25
+> * SMTP Server - Host : pop3.btconnect.com - Non-Encrypted - Port 25
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** BT Openworld Ports & Settings **
+> * SMTP Server - Host : mail.btopenworld.com - Non-Encrypted - Port 25
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** BT Internet Ports & Settings **
+> * SMTP Server - Host : mail.btinternet.com - Non-Encrypted - Port 25
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** Orange Ports & Settings **
+> * SMTP Server - Host : smtp.orange.net - Non-Encrypted - Port 25
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** Orange.uk Ports & Settings **
+> * SMTP Server - Host : smtp.orange.co.uk - Non-Encrypted - Port 25
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** Wanadoo UK Ports & Settings **
+> * SMTP Server - Host : smtp.wanadoo.co.uk - Non-Encrypted - Port 25
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** Hotmail Ports & Settings **
+> * SMTP Server - Host : smtp.live.com - Secure (SSL) - Port 465
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** O2 Online Deutschland Ports & Settings **
+> * SMTP Server - Host : mail.o2online.de - Non-Encrypted - Port 25
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** T-Online Deutschland Ports & Settings **
+> * SMTP Server - Host : securesmtp.t-online.de -  Secure (TLS) - Port 587
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** 1&1 (1and1) Ports & Settings **
+> * SMTP Server - Host : smtp.1and1.com - Secure (TLS) - Port 587
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** 1&1 Deutschland Ports & Settings **
+> * SMTP Server - Host : smtp.1und1.de - Secure (TLS) - Port 587
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** Comcast Ports & Settings **
+> * SMTP Server - Host : smtp.comcast.net - Non-Encrypted - Port 587
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** Verizon Ports & Settings **
+> * SMTP Server - Host : outgoing.verizon.net - Secure (SSL) - Port 465
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** Verizon (Yahoo hosted) Ports & Settings **
+> * SMTP Server - Host : outgoing.yahoo.verizon.net - Non-Encrypted - Port 587
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** zoho Mail Ports & Settings **
+> * SMTP Server - Host : smtp.zoho.com - Secure (SSL) - Port 465
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+> #### ** Mail.com Ports & Settings **
+> * SMTP Server - Host : smtp.mail.com - Secure (SSL) - Port 465
+
+Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
+
+
+> #### ** GMX.com Ports & Settings **
+> * SMTP Server - Host : smtp.gmx.com - Secure (SSL) - Port 465
 
 Note :These Ports & Settings may be different depending upon your Host Provider. Please contact your Web Server Host for correct details.
 
