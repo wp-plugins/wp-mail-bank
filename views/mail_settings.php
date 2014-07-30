@@ -55,7 +55,7 @@ else
 							</div>
 							<div class="layout-control-group">
 								<label class="layout-control-label"><?php _e("Mailer Type", mail_bank); ?> : <span class="error">*</span></label>
-								<div class="layout-controls">
+								<div class="wpib-layout-controls-radio">
 									<?php
 									$rdl_value = isset($email_data->mailer_type) ? $email_data->mailer_type : "1" ;
 									if($rdl_value == 1)
@@ -77,7 +77,7 @@ else
 							</div>
 							<div class="layout-control-group">
 								<label class="layout-control-label" ><?php _e("Return Path", mail_bank); ?> :</label>
-								<div class="layout-controls">
+								<div class="wpib-layout-controls-radio">
 									<?php
 										$chk_path=isset($email_data->return_path) ? $email_data->return_path : "1";
 										if($chk_path == "1")
@@ -129,7 +129,7 @@ else
 								</div>
 								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("Encryption", mail_bank); ?> : <span class="error">*</span></label>
-									<div class="layout-controls">
+									<div class="wpib-layout-controls-radio">
 										<?php
 										$rdl_data = isset($email_data->encryption) ? $email_data->encryption : "0" ;
 										if($rdl_data == 0)
@@ -162,7 +162,7 @@ else
 								</div>
 								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("Authentication", mail_bank); ?> : <span class="error">*</span></label>
-									<div class="layout-controls">
+									<div class="wpib-layout-controls-radio">
 										<?php
 										$rdl_value = isset($email_data->authentication) ? $email_data->authentication : "" ;
 										if($rdl_value == 1)
@@ -204,7 +204,7 @@ else
 								</div>
 								<div class="layout-control-group" style="margin-top: 10px;">
 									<label class="layout-control-label"><?php _e("SMTP Keep Alive", mail_bank); ?> : </label>
-									<div class="layout-controls">
+									<div class="wpib-layout-controls-radio">
 										<?php
 										$smtp_alive = isset($email_data->smtp_keep_alive) ? $email_data->smtp_keep_alive : "1" ;
 										if($smtp_alive == 0)
