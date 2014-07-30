@@ -20,7 +20,8 @@ if (!current_user_can($user_role_permission))
 else
 {
 	?>
-
+	
+<img style="margin-top: 15px;" src="<?php echo plugins_url("/assets/images/logo.png" , dirname(__FILE__)); ?>" />
 <h2 class="nav-tab-wrapper">
 	<a class="nav-tab " id="smtp_mail" href="admin.php?page=smtp_mail"><?php _e("Settings", mail_bank);?></a>
 	<a class="nav-tab " id="send_test_email" href="admin.php?page=send_test_email"><?php _e("Send Test Email", mail_bank);?></a>

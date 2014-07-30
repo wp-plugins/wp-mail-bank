@@ -63,7 +63,7 @@ else
 								</div>
 								<div class="layout-control-group">
 									<div class="layout-controls">
-										<input type="submit" id="ux_btn_action" name="ux_btn_action" onclick="console_log();" class="btn btn-success" value="<?php _e("Send Test Email", mail_bank); ?>">
+										<input type="submit" id="ux_btn_action" name="ux_btn_action" onclick="console_log();" class="btn btn-danger" value="<?php _e("Send Test Email", mail_bank); ?>">
 									</div>
 								</div>
 							</div>
@@ -93,8 +93,8 @@ else
 										</div>
 									</div>
 									<div class="layout-control-group">
-										<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="back_settings();" class="btn btn-success" value="<?php _e("Go Back to Settings", mail_bank); ?>">
-										<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="send_test_email();" class="btn btn-success" value="<?php _e("Send Another Test Email", mail_bank); ?>" style="float:Right;">
+										<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="back_settings();" class="btn btn-danger" value="<?php _e("Go Back to Settings", mail_bank); ?>">
+										<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="send_test_email();" class="btn btn-danger" value="<?php _e("Send Another Test Email", mail_bank); ?>" style="float:Right;">
 									</div>
 								</div>
 							</div>

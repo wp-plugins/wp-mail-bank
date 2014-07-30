@@ -227,7 +227,7 @@ else
 								</div>
 							</div>
 						</div>
-						<input type="submit" id="ux_btn_action" name="ux_btn_action" class="btn btn-success" style="margin-left: 178px; margin-top: 10px;" value="<?php _e("Save Changes", mail_bank); ?>">
+						<input type="submit" id="ux_btn_action" name="ux_btn_action" class="btn btn-danger" style="margin-left: 178px; margin-top: 10px;" value="<?php _e("Save Changes", mail_bank); ?>">
 					</div>
 				</div>
 			</div>

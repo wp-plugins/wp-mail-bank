@@ -1,6 +1,6 @@
-﻿=== WP Mail Bank - PHP & SMTP Mailer ===
+﻿=== WP Mail Bank - PHPMailer & SMTP Mailer ===
 Contributors: contact-banker
-Tags: admin, email, gmail, mail, mail smtp, Mailer, outgoing mail, phpmailer, plugin, Post, posts, privacy, security, sendmail, smtp, ssl, tls, wordpress smtp, wp smtp, wp-phpmailer, wp_mail
+Tags: admin, ajax, email, gmail, mail, mail smtp, Mailer, outgoing mail, phpmailer, plugin, Post, posts, privacy, security, sendmail, smtp, ssl, tls, wordpress smtp, wp smtp, wp-phpmailer, wp_mail
 Requires at least: 2.7
 Tested up to: 3.9.1
 Stable tag: 1.0
@@ -9,13 +9,13 @@ WP Mail Bank reconfigures the wp_mail() function and make it more enhanced.
 
 == Description ==
 
-### WordPress Mail Bank - Best PHP & SMTP Mailer
+### WordPress Mail Bank - Best PHPMailer & SMTP Mailer
 
 This plugin reconfigures the wp_mail() function nd make it more enhanced to use SMTP instead of mail() with various options available.
 
+The Plugin has options to choose between your custom smtp server or the inbuilt phpmailer.
 
 ###IMPORTANT: If you think you found a bug in WP Mail Bank or have any problem or question concerning WP Mail Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com).  
-
 
 ###Key Features :
 
@@ -31,6 +31,9 @@ This plugin reconfigures the wp_mail() function nd make it more enhanced to use 
 * Specify to use Authentication or disable Authentication.
 * Specify SMTP Keep Alive to keep SMTP Authentication Session open or closed after sending emails.
 
+### Send Test Email Utility with Console Log
+
+With this utility you can always check weither you have configured your SMTP Mail Server details correctly or not. A Test email would be sent to your mentioned email address with console log of the output.
 
 > #### ** Default SMTP Ports & Settings **
 > * SMTP Server  - Non-Encrypted - Port 25 ( or 587 )

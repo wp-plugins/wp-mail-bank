@@ -28,11 +28,11 @@ else
 						</h4>
 					</div>
 					<div class="widget-layout-body">
-						<a class="btn btn-success system-report" href="#"><?php _e("Get System Report", mail_bank); ?></a>
+						<a class="btn btn-danger system-report" href="#"><?php _e("Get System Report", mail_bank); ?></a>
 						<div id="wp-insta-system-report" class="layout-system-report">
 							<textarea readonly="readonly"></textarea>
 						</div>
-						<a class="btn btn-success close-report" href="#"><?php _e("Close System Report", mail_bank); ?></a>
+						<a class="btn btn-danger close-report" href="#"><?php _e("Close System Report", mail_bank); ?></a>
 						<div class="wpib-separator-doubled"></div>
 						<div class="fluid-layout">
 							<div class="layout-span6">
