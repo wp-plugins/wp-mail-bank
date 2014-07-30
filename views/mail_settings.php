@@ -161,29 +161,6 @@ else
 									</div>
 								</div>
 								<div class="layout-control-group">
-									<label class="layout-control-label"><?php _e("SMTP Keep Alive", mail_bank); ?> : </label>
-									<div class="layout-controls">
-										<?php
-										$smtp_alive = isset($email_data->smtp_keep_alive) ? $email_data->smtp_keep_alive : "1" ;
-										if($smtp_alive == 0)
-										{
-										?>
-										<input type="radio" checked="checked" id="ux_rdl_smtp_enable" name="ux_rdl_smtp_alive" value="0" /><?php _e("Enable", mail_bank); ?>
-										<input type="radio" style="margin-left: 10px;" id="ux_rdl_smtp_disable" name="ux_rdl_smtp_alive" value="1"/><?php _e("Disable", mail_bank); ?>
-										<?php
-										}
-										else 
-										{
-										?>
-										<input type="radio" id="ux_rdl_smtp_enable" name="ux_rdl_smtp_alive" value="0" /><?php _e("Enable", mail_bank); ?>
-										<input type="radio" checked="checked" style="margin-left: 10px;" id="ux_rdl_smtp_disable" name="ux_rdl_smtp_alive" value="1"/><?php _e("Disable", mail_bank); ?>
-										<?php
-										}
-										?>
-										<p class="wpib-desc-italic"><?php _e("You can enable Smtp Keep Alive to keep the SMTP Authentication Session Open.", mail_bank); ?></p>
-									</div>
-								</div>
-								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("Authentication", mail_bank); ?> : <span class="error">*</span></label>
 									<div class="layout-controls">
 										<?php
@@ -206,21 +183,46 @@ else
 									</div>
 								</div>
 								<div id="ux_smtp" style="display:none">
-									<div class="layout-span5">
-										<div class="layout-control-group">
-											<label class="layout-control-label"><?php _e("SMTP Username", mail_bank); ?> : <span class="error">*</span></label>
-											<div class="layout-controls">
-												<input type="text" id="ux_txt_username" name="ux_txt_username" placeholder="Please enter Username"  class="layout-span12"  value="<?php echo isset($email_data->smtp_username) ? $email_data->smtp_username : "" ;?>"/>
+									<div class="fluid-layout">
+										<div class="layout-span5">
+											<div class="layout-control-group">
+												<label class="layout-control-label"><?php _e("SMTP Username", mail_bank); ?> : <span class="error">*</span></label>
+												<div class="layout-controls">
+													<input type="text" id="ux_txt_username" name="ux_txt_username" placeholder="Please enter Username"  class="layout-span12"  value="<?php echo isset($email_data->smtp_username) ? $email_data->smtp_username : "" ;?>"/>
+												</div>
+											</div>
+										</div>
+										<div class="layout-span5">
+											<div class="layout-control-group">
+												<label class="layout-control-label"><?php _e("SMTP Password", mail_bank); ?> : <span class="error">*</span></label>
+												<div class="layout-controls">
+													<input type="password" id="ux_txt_password" placeholder="Please enter Password"   name="ux_txt_password" style="margin-left: -26px;" class="layout-span12"  value="<?php echo isset($email_data->smtp_password) ? $email_data->smtp_password : "" ;?>">
+												</div>
 											</div>
 										</div>
 									</div>
-									<div class="layout-span5">
-										<div class="layout-control-group">
-											<label class="layout-control-label"><?php _e("SMTP Password", mail_bank); ?> : <span class="error">*</span></label>
-											<div class="layout-controls">
-												<input type="password" id="ux_txt_password" placeholder="Please enter Password"   name="ux_txt_password" style="margin-left: -26px;" class="layout-span12"  value="<?php echo isset($email_data->smtp_password) ? $email_data->smtp_password : "" ;?>">
-											</div>
-										</div>
+								</div>
+								<div class="layout-control-group" style="margin-top: 10px;">
+									<label class="layout-control-label"><?php _e("SMTP Keep Alive", mail_bank); ?> : </label>
+									<div class="layout-controls">
+										<?php
+										$smtp_alive = isset($email_data->smtp_keep_alive) ? $email_data->smtp_keep_alive : "1" ;
+										if($smtp_alive == 0)
+										{
+										?>
+										<input type="radio" checked="checked" id="ux_rdl_smtp_enable" name="ux_rdl_smtp_alive" value="0" /><?php _e("Enable", mail_bank); ?>
+										<input type="radio" style="margin-left: 10px;" id="ux_rdl_smtp_disable" name="ux_rdl_smtp_alive" value="1"/><?php _e("Disable", mail_bank); ?>
+										<?php
+										}
+										else 
+										{
+										?>
+										<input type="radio" id="ux_rdl_smtp_enable" name="ux_rdl_smtp_alive" value="0" /><?php _e("Enable", mail_bank); ?>
+										<input type="radio" checked="checked" style="margin-left: 10px;" id="ux_rdl_smtp_disable" name="ux_rdl_smtp_alive" value="1"/><?php _e("Disable", mail_bank); ?>
+										<?php
+										}
+										?>
+										<p class="wpib-desc-italic"><?php _e("You can enable Smtp Keep Alive to keep the SMTP Authentication Session Open.", mail_bank); ?></p>
 									</div>
 								</div>
 							</div>
