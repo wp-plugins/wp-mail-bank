@@ -1,4 +1,4 @@
-﻿=== WP Mail Bank ===
+﻿=== WP Mail Bank - WP SMTP Mailer ===
 Contributors: contact-banker
 Tags: mail, smtp, wp_mail, mailer, phpmailer, admin, plugins
 Requires at least: 2.7
