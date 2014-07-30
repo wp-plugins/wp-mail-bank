@@ -17,7 +17,7 @@ This plugin reconfigures the wp_mail() function nd make it more enhanced to use 
 ###IMPORTANT: If you think you found a bug in WP Mail Bank or have any problem or question concerning WP Mail Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com).  
 
 
-Key Features :
+###Key Features :
 
 * Specify the From Name that emails should be sent from.
 * Specify the Email Address that emails should be sent from.
