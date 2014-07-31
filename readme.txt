@@ -17,6 +17,8 @@ The Plugin has options to choose between your custom smtp server or the inbuilt 
 
 ###IMPORTANT: If you think you found a bug in WP Mail Bank or have any problem or question concerning WP Mail Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com).  
 
+***July 31, 2014: We're happy to announce that WP Mail Bank reached 150+ plugin downloads in only 2 days. We frequently receive positive feedback from people using our WP Mail Bank Plugin for WordPress. Thanks so much for your support!***
+
 ###Key Features :
 
 * Specify the From Name that emails should be sent from.
