@@ -196,7 +196,7 @@ else
 											<div class="layout-control-group">
 												<label class="layout-control-label"><?php _e("SMTP Password", mail_bank); ?> : <span class="error">*</span></label>
 												<div class="layout-controls">
-													<input type="password" id="ux_txt_password" placeholder="Please enter Password"   name="ux_txt_password" style="margin-left: -26px;" class="layout-span12"  value="<?php echo isset($email_data->smtp_password) ? $email_data->smtp_password : "" ;?>">
+													<input type="password" id="ux_txt_password" placeholder="Please enter Password"   name="ux_txt_password" style="margin-left: -26px;" class="layout-span12"  value="<?php echo isset($email_data->smtp_password) ? stripcslashes(htmlspecialchars_decode($email_data->smtp_password)) : "" ;?>">
 												</div>
 											</div>
 										</div>
@@ -313,8 +313,9 @@ jQuery("#ux_frm_email").validate
 	},
 	submitHandler: function(form)
 	{
+		var password= encodeURIComponent(jQuery("#ux_txt_password").val());
 		jQuery("#form_success_message").css("display","block");
-		jQuery.post(ajaxurl, jQuery(form).serialize() +"&param=add_mail_detail&action=add_mail_library", function(data)
+		jQuery.post(ajaxurl, jQuery(form).serialize() +"&password="+password+"&param=add_mail_detail&action=add_mail_library", function(data)
 		{
 			window.location.reload();
 		});

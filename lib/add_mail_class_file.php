@@ -52,7 +52,7 @@ else
 				$email_setup["smtp_keep_alive"] = intval($_REQUEST["ux_rdl_smtp_alive"]);
 				$email_setup["authentication"] = intval($_REQUEST["ux_rdl_authentication_bank"]);
 				$email_setup["smtp_username"] = esc_attr($_REQUEST["ux_txt_username"]);
-				$email_setup["smtp_password"] = esc_attr($_REQUEST["ux_txt_password"]);
+				$email_setup["smtp_password"] = htmlspecialchars_decode(esc_attr($_REQUEST["password"]));
 				
 				$count_direction = $wpdb->get_var
 				(
