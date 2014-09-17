@@ -4,7 +4,7 @@ Plugin Name: Wp Mail Bank
 Plugin URI: http://tech-banker.com
 Description: WP Mail Bank reconfigures the wp_mail() function and make it more enhanced.
 Author: Tech Banker
-Version: 1.1
+Version: 1.2
 Author URI: http://tech-banker.com
 */
 
@@ -38,8 +38,9 @@ function backend_plugin_js_scripts_mail_bank()
 
 function backend_plugin_css_scripts_mail_bank()
 {
-	wp_enqueue_style("stylesheet.css", plugins_url("/assets/css/stylesheet.css",__FILE__));
 	wp_enqueue_style("system-message.css", plugins_url("/assets/css/system-message.css",__FILE__));
+	wp_enqueue_style("framework.css", plugins_url("/assets/css/framework.css",__FILE__));
+	wp_enqueue_style("wp-mail-bank.css", plugins_url("/assets/css/wp-mail-bank.css",__FILE__));
 }
 
 function wp_mail_bank_configure($phpmailer) 
@@ -111,12 +112,111 @@ function mail_bank_plugin_load_text_domain()
 		load_plugin_textdomain(mail_bank, false, MAIL_BK_PLUGIN_DIRNAME . "/lang");
 	}
 }
+
+/////////////////////////////////////  admin menu////////////////////////////////////////
+
+function add_mail_icon($meta = TRUE)
+{
+	global $wp_admin_bar,$wpdb,$current_user;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
+	if (!is_user_logged_in())
+	{
+		return;
+	}
+	switch ($role)
+	{
+		case "administrator":
+			$wp_admin_bar->add_menu(array(
+			"id" => "mail_bank",
+			"title" => __("<img src=\"" . plugins_url("/assets/images/mail.png",__FILE__)."\" width=\"25\"
+			height=\"25\" style=\"vertical-align:text-top; margin-right:5px;\" />WP Mail Bank"),
+			"href" => __(site_url() . "/wp-admin/admin.php?page=smtp_mail"),
+			));
+				
+			$wp_admin_bar->add_menu(array(
+					"parent" => "mail_bank",
+					"id" => "Settings",
+					"href" => site_url() . "/wp-admin/admin.php?page=smtp_mail",
+					"title" => __("Settings", mail_bank))
+			);
+			$wp_admin_bar->add_menu(array(
+					"parent" => "mail_bank",
+					"id" => "send_test_email",
+					"href" => site_url() . "/wp-admin/admin.php?page=send_test_email",
+					"title" => __("Send Test Email", mail_bank))
+			);
+			$wp_admin_bar->add_menu(array(
+					"parent" => "mail_bank",
+					"id" => "wp_system_status",
+					"href" => site_url() . "/wp-admin/admin.php?page=mail_system_status",
+					"title" => __("System Status", mail_bank))
+			);
+		break;
+		case "editor":
+			$wp_admin_bar->add_menu(array(
+			"id" => "mail_bank",
+			"title" => __("<img src=\"" . plugins_url("/assets/images/mail.png",__FILE__)."\" width=\"25\"
+			height=\"25\" style=\"vertical-align:text-top; margin-right:5px;\" />Wp Mail Bank"),
+			"href" => __(site_url() . "/wp-admin/admin.php?page=mail_settings"),
+			));
+				
+			$wp_admin_bar->add_menu(array(
+					"parent" => "mail_bank",
+					"id" => "Settings",
+					"href" => site_url() . "/wp-admin/admin.php?page=mail_settings",
+					"title" => __("Settings", mail_bank))
+			);
+			$wp_admin_bar->add_menu(array(
+					"parent" => "mail_bank",
+					"id" => "send_test_email",
+					"href" => site_url() . "/wp-admin/admin.php?page=send_test_email",
+					"title" => __("Send Test Email", mail_bank))
+			);
+			$wp_admin_bar->add_menu(array(
+					"parent" => "mail_bank",
+					"id" => "wp_system_status",
+					"href" => site_url() . "/wp-admin/admin.php?page=wp_system_status",
+					"title" => __("System Status", mail_bank))
+			);
+		break;
+		case "author":
+			$wp_admin_bar->add_menu(array(
+			"id" => "mail_bank",
+			"title" => __("<img src=\"" . plugins_url("/assets/images/mail.png",__FILE__)."\" width=\"25\"
+			height=\"25\" style=\"vertical-align:text-top; margin-right:5px;\" />Wp Mail Bank"),
+			"href" => __(site_url() . "/wp-admin/admin.php?page=mail_settings"),
+			));
+				
+			$wp_admin_bar->add_menu(array(
+					"parent" => "mail_bank",
+					"id" => "Settings",
+					"href" => site_url() . "/wp-admin/admin.php?page=mail_settings",
+					"title" => __("Settings", mail_bank))
+			);
+			$wp_admin_bar->add_menu(array(
+					"parent" => "mail_bank",
+					"id" => "send_test_email",
+					"href" => site_url() . "/wp-admin/admin.php?page=send_test_email",
+					"title" => __("Send Test Email", mail_bank))
+			);
+			$wp_admin_bar->add_menu(array(
+					"parent" => "mail_bank",
+					"id" => "wp_system_status",
+					"href" => site_url() . "/wp-admin/admin.php?page=wp_system_status",
+					"title" => __("System Status", mail_bank))
+			);
+		break;
+	}
+}
 /////////////////////////////////////  Call Install Script on Plugin Activation ////////////////////////////////////////
 
 function plugin_install_script_for_mail_bank()
 {
 	include_once MAIL_BK_PLUGIN_DIR . "/lib/wp-install-script.php";
 }
+add_action("admin_bar_menu", "add_mail_icon",100);
 add_action('phpmailer_init','wp_mail_bank_configure');
 add_action("plugins_loaded", "mail_bank_plugin_load_text_domain");
 add_action("admin_menu","create_global_menus_for_mail_bank");

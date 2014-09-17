@@ -33,21 +33,21 @@ else
 								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("To", mail_bank); ?> : <span class="error">*</span></label>
 									<div class="layout-controls">
-										<input type="text" name="ux_email_to" class="layout-span9" placeholder="Please enter Email" id="ux_email_to" value="<?php echo $admin_email?>"/><br>
+										<input type="text" name="ux_email_to" class="layout-span12" placeholder="Please enter Email" id="ux_email_to" value="<?php echo $admin_email?>"/><br>
 										<p class="wpib-desc-italic"><?php _e("You can specify the email-address you want to send for testing.", mail_bank); ?></p>
 									</div>
 								</div>
 								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("Subject", mail_bank); ?> : <span class="error">*</span></label>
 									<div class="layout-controls">
-										<input type="text" name="ux_email_subject" class="layout-span9" placeholder="Please enter Subject" id="ux_email_subject" value="Test Email"/><br>
+										<input type="text" name="ux_email_subject" class="layout-span12" placeholder="Please enter Subject" id="ux_email_subject" value="Test Email"/><br>
 										<p class="wpib-desc-italic"><?php _e("You can specify the subject of the email you want to send for testing.", mail_bank); ?></p>
 									</div>
 								</div>
 								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("Message", mail_bank); ?> :</label>
 									<div class="layout-controls">
-										<div class="layout-span9">
+										<div class="layout-span12">
 											<?php
 												$distribution = "Hello,
 												This is a Test Email from WP Mail Bank.
@@ -80,6 +80,11 @@ else
 							</div>
 							<div class="widget-layout-body">
 								<div class="fluid-layout">
+								<div class="layout-control-group">
+									<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="back_settings();" class="btn btn-danger" value="<?php _e("Go Back to Settings", mail_bank); ?>">
+									<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="send_test_email();" class="btn btn-danger" value="<?php _e("Send Another Test Email", mail_bank); ?>" style="float:Right;">
+								</div>
+								<div class="separator-doubled" style="padding: 4px;"></div>
 									<div class="layout-control-group" id="result_div" style="display:none;">
 										<label class="layout-control-label"><?php _e("Result ", mail_bank); ?>:</label>
 										<div class="layout-controls">
@@ -92,13 +97,8 @@ else
 											<textarea name="ux_console_log"  class="layout-span12" id="ux_console_log" rows="15" readonly="readonly"><?php _e("Kindly be Patient! We are sending the Test Email!", mail_bank); ?></textarea>
 										</div>
 									</div>
-									<div class="layout-control-group">
-										<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="back_settings();" class="btn btn-danger" value="<?php _e("Go Back to Settings", mail_bank); ?>">
-										<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="send_test_email();" class="btn btn-danger" value="<?php _e("Send Another Test Email", mail_bank); ?>" style="float:Right;">
-									</div>
 								</div>
 							</div>
-							
 						</div>
 					</div>
 				</div>

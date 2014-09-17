@@ -38,24 +38,23 @@ else
 						<h4><?php _e( "Settings - WP Mail Bank", mail_bank ); ?></h4>
 					</div>
 					<div class="widget-layout-body">
-						<div class="fluid-layout">
 							<div class="layout-control-group">
 								<label class="layout-control-label"><?php _e("From Name", mail_bank); ?> : <span class="error">*</span></label>
 								<div class="layout-controls">
-									<input type="text" name="ux_email_from_name" class="layout-span9" id="ux_email_from_name" placeholder="Please enter your From Name" value="<?php echo isset($email_data->from_name) ? $email_data->from_name : "WordPress" ;?>"/><br>
+									<input type="text" name="ux_email_from_name" class="layout-span12" id="ux_email_from_name" placeholder="Please enter your From Name" value="<?php echo isset($email_data->from_name) ? $email_data->from_name : "WordPress" ;?>"/><br>
 									<p class="wpib-desc-italic"><?php _e("You can specify the name that emails should be sent from.", mail_bank); ?></p>
 								</div>
 							</div>
 							<div class="layout-control-group">
 								<label class="layout-control-label"><?php _e("From Email", mail_bank); ?> : <span class="error">*</span></label>
 								<div class="layout-controls">
-									<input type="text" name="ux_email_from_email" class="layout-span9" id="ux_email_from_email" placeholder="Please enter your From Email" value="<?php echo isset($email_data->from_email) ? $email_data->from_email : $admin_email ;?>"/><br>
+									<input type="text" name="ux_email_from_email" class="layout-span12" id="ux_email_from_email" placeholder="Please enter your From Email" value="<?php echo isset($email_data->from_email) ? $email_data->from_email : $admin_email ;?>"/><br>
 									<p class="wpib-desc-italic"><?php _e("You can specify the email that emails should be sent from.", mail_bank); ?></p>
 								</div>
 							</div>
 							<div class="layout-control-group">
 								<label class="layout-control-label"><?php _e("Mailer Type", mail_bank); ?> : <span class="error">*</span></label>
-								<div class="wpib-layout-controls-radio">
+								<div class="layout-controls rdl_mail_bank">
 									<?php
 									$rdl_value = isset($email_data->mailer_type) ? $email_data->mailer_type : "1" ;
 									if($rdl_value == 1)
@@ -77,7 +76,7 @@ else
 							</div>
 							<div class="layout-control-group">
 								<label class="layout-control-label" ><?php _e("Return Path", mail_bank); ?> :</label>
-								<div class="wpib-layout-controls-radio">
+								<div class="layout-controls rdl_mail_bank">
 									<?php
 										$chk_path=isset($email_data->return_path) ? $email_data->return_path : "1";
 										if($chk_path == "1")
@@ -100,7 +99,7 @@ else
 								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("Return Email", mail_bank); ?> : <span class="error">*</span></label>
 									<div class="layout-controls">
-										<input type="text" name="ux_return_email" placeholder="Please enter your Return Email" class="layout-span9" id="ux_return_email" value="<?php echo isset($email_data->return_email) ? $email_data->return_email : "" ;?>"/><br>
+										<input type="text" name="ux_return_email" placeholder="Please enter your Return Email" class="layout-span12" id="ux_return_email" value="<?php echo isset($email_data->return_email) ? $email_data->return_email : "" ;?>"/><br>
 										<p class="wpib-desc-italic"><?php _e("You can specify the email address that should be set as tghe return path for your emails.", mail_bank); ?></p>
 									</div>
 								</div>
@@ -108,7 +107,7 @@ else
 							<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("Word Wrap", mail_bank); ?> :</label>
 									<div class="layout-controls">
-										<input type="text" name="ux_word_wrap" class="layout-span9" id="ux_word_wrap" placeholder="Please enter wordwrap" value="<?php echo isset($email_data->word_wrap) ? $email_data->word_wrap : "50" ;?>"/><br>
+										<input type="text" name="ux_word_wrap" class="layout-span12" id="ux_word_wrap" placeholder="Please enter wordwrap" value="<?php echo isset($email_data->word_wrap) ? $email_data->word_wrap : "50" ;?>"/><br>
 										<p class="wpib-desc-italic"><?php _e("The number of characters at which the string will be wrapped.", mail_bank); ?></p>
 									</div>
 								</div>
@@ -116,20 +115,20 @@ else
 								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("SMTP Host", mail_bank); ?> : <span class="error">*</span></label>
 									<div class="layout-controls">
-										<input type="text" name="ux_smtp_host" class="layout-span9" id="ux_smtp_host" placeholder="Please enter your SMTP Host" value="<?php echo isset($email_data->smtp_host) ? $email_data->smtp_host : "" ;?>"/><br>
+										<input type="text" name="ux_smtp_host" class="layout-span12" id="ux_smtp_host" placeholder="Please enter your SMTP Host" value="<?php echo isset($email_data->smtp_host) ? $email_data->smtp_host : "" ;?>"/><br>
 										<p class="wpib-desc-italic"><?php _e("You can specify the smtp host for sending your emails.", mail_bank); ?></p>
 									</div>
 								</div>
 								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("SMTP Port", mail_bank); ?> : <span class="error">*</span></label>
 									<div class="layout-controls">
-										<input type="text" name="ux_smtp_port" class="layout-span9"  id="ux_smtp_port" placeholder="Please enter your SMTP Port" value="<?php echo isset($email_data->smtp_port) ? $email_data->smtp_port : "25" ;?>"/><br>
+										<input type="text" name="ux_smtp_port" class="layout-span12"  id="ux_smtp_port" placeholder="Please enter your SMTP Port" value="<?php echo isset($email_data->smtp_port) ? $email_data->smtp_port : "25" ;?>"/><br>
 										<p class="wpib-desc-italic"><?php _e("You can specify the smtp port for sending your emails.", mail_bank); ?></p>
 									</div>
 								</div>
 								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("Encryption", mail_bank); ?> : <span class="error">*</span></label>
-									<div class="wpib-layout-controls-radio">
+									<div class="layout-controls rdl_mail_bank">
 										<?php
 										$rdl_data = isset($email_data->encryption) ? $email_data->encryption : "0" ;
 										if($rdl_data == 0)
@@ -162,7 +161,7 @@ else
 								</div>
 								<div class="layout-control-group">
 									<label class="layout-control-label"><?php _e("Authentication", mail_bank); ?> : <span class="error">*</span></label>
-									<div class="wpib-layout-controls-radio">
+									<div class="layout-controls rdl_mail_bank">
 										<?php
 										$rdl_value = isset($email_data->authentication) ? $email_data->authentication : "" ;
 										if($rdl_value == 1)
@@ -204,7 +203,7 @@ else
 								</div>
 								<div class="layout-control-group" style="margin-top: 10px;">
 									<label class="layout-control-label"><?php _e("SMTP Keep Alive", mail_bank); ?> : </label>
-									<div class="wpib-layout-controls-radio">
+									<div class="layout-controls rdl_mail_bank">
 										<?php
 										$smtp_alive = isset($email_data->smtp_keep_alive) ? $email_data->smtp_keep_alive : "1" ;
 										if($smtp_alive == 0)
@@ -226,7 +225,6 @@ else
 									</div>
 								</div>
 							</div>
-						</div>
 						<input type="submit" id="ux_btn_action" name="ux_btn_action" class="btn btn-danger" style="margin-left: 178px; margin-top: 10px;" value="<?php _e("Save Changes", mail_bank); ?>">
 					</div>
 				</div>
@@ -313,10 +311,16 @@ jQuery("#ux_frm_email").validate
 	},
 	submitHandler: function(form)
 	{
+		jQuery("body").css("opacity",".5");
+		var overlay = jQuery("<div class=\"processing_overlay\"></div>");
+		jQuery("body").append(overlay);
+		
 		var password= encodeURIComponent(jQuery("#ux_txt_password").val());
 		jQuery("#form_success_message").css("display","block");
 		jQuery.post(ajaxurl, jQuery(form).serialize() +"&password="+password+"&param=add_mail_detail&action=add_mail_library", function(data)
 		{
+			jQuery(".processing_overlay").remove();
+			jQuery("body").css("opacity","1");
 			window.location.reload();
 		});
 	}
