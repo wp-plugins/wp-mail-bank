@@ -50,10 +50,10 @@ else
 										<div class="layout-span12">
 											<?php
 												$distribution = "Hello,
-												This is a Test Email from WP Mail Bank.
-												Thanks for using it!
-												Best Regards
-												<strong>WP Mail Bank</strong>"; 
+														This is a Test Email from WP Mail Bank.
+														Thanks for using it!
+														Best Regards
+														<strong>WP Mail Bank</strong>"; 
 												wp_editor( $distribution, $name ="uxEmailTemplate" ,array("media_buttons" => false, 
 												"textarea_rows" => 8, "tabindex" => 4,"tinymce" =>false ));  
 											?>
@@ -71,37 +71,37 @@ else
 						</div>
 					</div>
 				</div>
-				</div>
-				<div id="ux_mail_console" style="display: none">
-					<div class="layout-span12 responsive">
-						<div class="widget-layout">
-							<div class="widget-layout-title">
-								<h4><?php _e( "Send Test Email - WP Mail Console Log", mail_bank ); ?></h4>
+			</div>
+			<div id="ux_mail_console" style="display: none">
+				<div class="layout-span12 responsive">
+					<div class="widget-layout">
+						<div class="widget-layout-title">
+							<h4><?php _e( "Send Test Email - WP Mail Console Log", mail_bank ); ?></h4>
+						</div>
+						<div class="widget-layout-body">
+							<div class="fluid-layout">
+							<div class="layout-control-group">
+								<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="back_settings();" class="btn btn-danger" value="<?php _e("Go Back to Settings", mail_bank); ?>">
+								<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="send_test_email();" class="btn btn-danger" value="<?php _e("Send Another Test Email", mail_bank); ?>" style="float:Right;">
 							</div>
-							<div class="widget-layout-body">
-								<div class="fluid-layout">
-								<div class="layout-control-group">
-									<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="back_settings();" class="btn btn-danger" value="<?php _e("Go Back to Settings", mail_bank); ?>">
-									<input type="button" id="ux_btn_action" name="ux_btn_action" onclick="send_test_email();" class="btn btn-danger" value="<?php _e("Send Another Test Email", mail_bank); ?>" style="float:Right;">
-								</div>
-								<div class="separator-doubled" style="padding: 4px;"></div>
-									<div class="layout-control-group" id="result_div" style="display:none;">
-										<label class="layout-control-label"><?php _e("Result ", mail_bank); ?>:</label>
-										<div class="layout-controls">
-											<textarea name="ux_result_log"  class="layout-span12" id="ux_result_log" rows="5" readonly="readonly" ></textarea>
-										</div>
+							<div class="separator-doubled" style="padding: 4px;"></div>
+								<div class="layout-control-group" id="result_div" style="display:none;">
+									<label class="layout-control-label"><?php _e("Result ", mail_bank); ?>:</label>
+									<div class="layout-controls">
+										<textarea name="ux_result_log"  class="layout-span12" id="ux_result_log" rows="5" readonly="readonly" ></textarea>
 									</div>
-									<div class="layout-control-group" id="console_log_div">
-										<label class="layout-control-label"><?php _e("SMTP Debugging Output", mail_bank); ?> :</label>
-										<div class="layout-controls">
-											<textarea name="ux_console_log"  class="layout-span12" id="ux_console_log" rows="15" readonly="readonly"><?php _e("Kindly be Patient! We are sending the Test Email!", mail_bank); ?></textarea>
-										</div>
+								</div>
+								<div class="layout-control-group" id="console_log_div">
+									<label class="layout-control-label"><?php _e("SMTP Debugging Output", mail_bank); ?> :</label>
+									<div class="layout-controls">
+										<textarea name="ux_console_log"  class="layout-span12" id="ux_console_log" rows="15" readonly="readonly"><?php _e("Kindly be Patient! We are sending the Test Email!", mail_bank); ?></textarea>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
 		</div>
 	</form>
 	<?php

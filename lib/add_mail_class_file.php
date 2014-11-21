@@ -11,7 +11,6 @@ switch($role)
 		$user_role_permission = "publish_posts";
 		break;
 }
-
 if (!current_user_can($user_role_permission))
 {
 	return;
@@ -20,17 +19,15 @@ else
 {
 	class save_data
 	{
-		function insert_data($email_setup)
+		function insert_data($tbl, $data)
 		{
 			global $wpdb;
-			$wpdb->insert(wp_mail_bank(), $email_setup);
-			die();
+			$wpdb->insert($tbl,$data);
 		}
-		function update_email_data($update_email_data,$where)
+		function update_data($tbl,$data,$where)
 		{
 			global $wpdb;
-			$wpdb->update(wp_mail_bank(),$update_email_data, $where);
-			die();
+			$wpdb->update($tbl,$data,$where);
 		}
 	}
 	if(isset($_REQUEST["param"]))
@@ -60,13 +57,13 @@ else
 				);
 				if($count_direction == 0)
 				{
-					$insert->insert_data($email_setup);
+					$insert->insert_data(wp_mail_bank(),$email_setup);
 				}
 				else 
 				{
 					$where = array();
 					$where["id"] = 1;
-					$insert->update_email_data($email_setup,$where);
+					$insert->update_data(wp_mail_bank(),$email_setup,$where);
 				}
 				die();
 				

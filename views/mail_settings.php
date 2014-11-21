@@ -25,8 +25,8 @@ else
 		);
 		$admin_email = get_option( 'admin_email' );
 	?>
-	<form id="ux_frm_email" class="layout-form" style="max-width:1000px";>
-	<div id="form_success_message" class="message green" style="display: none;">
+	<form id="ux_frm_email" class="layout-form" style="max-width:1000px;">
+	<div id="form_success_message" class="custom-message green" style="display: none;">
 		<span>
 			<strong><?php _e("Settings has been successfully saved.", mail_bank); ?></strong>
 		</span>
@@ -137,7 +137,7 @@ else
 										<input type="radio" checked="checked" id="ux_rdl_encrption_no" name="ux_rdl_encrption" value="0" /><?php _e("No Encryption", mail_bank); ?>
 										<input type="radio" id="ux_rdl_encrption_ssl" name="ux_rdl_encrption" style="margin-left: 10px;" value="1"/><?php _e("Use SSL Encryption", mail_bank); ?>
 										<input type="radio" id="ux_rdl_encrption_tls" name="ux_rdl_encrption" style="margin-left: 10px;" value="2"/><?php _e("Use TLS Encryption", mail_bank); ?>
-									  <?php
+										<?php
 										}
 										else if($rdl_data == 1)
 										{
@@ -150,7 +150,7 @@ else
 										else if($rdl_data == 2)
 										{
 											?>
-											<input type="radio"  id="ux_rdl_encrption_no" name="ux_rdl_encrption" value="0" /><?php _e("No Encryption", mail_bank); ?>
+										<input type="radio"  id="ux_rdl_encrption_no" name="ux_rdl_encrption" value="0" /><?php _e("No Encryption", mail_bank); ?>
 										<input type="radio"  id="ux_rdl_encrption_ssl" style="margin-left: 10px;" name="ux_rdl_encrption" value="1"/><?php _e("Use SSL Encryption", mail_bank); ?>
 										<input type="radio" checked="checked" id="ux_rdl_encrption_tls" style="margin-left: 10px;" name="ux_rdl_encrption" value="2"/><?php _e("Use TLS Encryption", mail_bank); ?>
 										<?php

@@ -55,3 +55,8 @@ div.processing_overlay
 	
 	left: 0;
 }
+.message_mail
+{
+	z-index: 9999;
+	
+}
