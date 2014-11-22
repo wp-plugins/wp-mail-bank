@@ -1889,3 +1889,15 @@ div.loader_opacity
 {
  line-height: 2em !important;
 }
+.framework_plugin_message
+{
+ font-weight: 400;
+ background: #d54d21;
+ padding: 1em;
+ margin: 10px 0;
+ margin: 0px !important;
+}
+.framework_plugin_message > p
+{
+ color: #fff;
+}

@@ -4,7 +4,7 @@ Plugin Name: Wp Mail Bank
 Plugin URI: http://tech-banker.com
 Description: WP Mail Bank reconfigures the wp_mail() function and make it more enhanced.
 Author: Tech Banker
-Version: 1.3
+Version: 1.4
 Author URI: http://tech-banker.com
 */
 
@@ -15,6 +15,7 @@ if (!defined("MAIL_BK_PLUGIN_DIR")) define("MAIL_BK_PLUGIN_DIR",  plugin_dir_pat
 if (!defined("MAIL_BK_PLUGIN_DIRNAME")) define("MAIL_BK_PLUGIN_DIRNAME", plugin_basename(dirname(__FILE__)));
 if (!defined("mail_bank")) define("mail_bank", "mail-banker");
 if (!defined("tech_bank")) define("tech_bank", "tech-banker");
+if (!defined("MAIL_FILE")) define("MAIL_FILE","wp-mail-bank/wp-mail-bank.php");
 
 global $phpmailer;
 
@@ -297,6 +298,30 @@ if(!function_exists("plugin_install_script_for_mail_bank"))
 	}
 }
 
+function mail_bank_plugin_update_message($args)
+{
+	$response = wp_remote_get( 'http://plugins.svn.wordpress.org/wp-mail-bank/trunk/readme.txt' );
+	if ( ! is_wp_error( $response ) && ! empty( $response['body'] ) )
+	{
+		// Output Upgrade Notice
+		$matches        = null;
+		$regexp         = '~==\s*Changelog\s*==\s*=\s*[0-9.]+\s*=(.*)(=\s*' . preg_quote($args['Version']) . '\s*=|$)~Uis';
+		$upgrade_notice = '';
+		if ( preg_match( $regexp, $response['body'], $matches ) ) {
+			$changelog = (array) preg_split('~[\r\n]+~', trim($matches[1]));
+			$upgrade_notice .= '<div class="framework_plugin_message">';
+			foreach ( $changelog as $index => $line ) {
+				$upgrade_notice .= "<p>".$line."</p>";
+			}
+			$upgrade_notice .= '</div> ';
+			echo $upgrade_notice;
+		}
+	}
+}
+
+
+
+
 add_action("network_admin_menu", "create_global_menus_for_mail_bank" );
 add_action("admin_bar_menu", "add_mail_icon",100);
 add_action('phpmailer_init','wp_mail_bank_configure');
@@ -305,4 +330,5 @@ add_action("admin_menu","create_global_menus_for_mail_bank");
 add_action("admin_init","backend_plugin_js_scripts_mail_bank");
 add_action("admin_init","backend_plugin_css_scripts_mail_bank");
 register_activation_hook(__FILE__, "plugin_install_script_for_mail_bank");
+add_action("in_plugin_update_message-".MAIL_FILE,"mail_bank_plugin_update_message" );
 ?>
