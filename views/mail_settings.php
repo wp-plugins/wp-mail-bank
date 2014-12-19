@@ -26,11 +26,14 @@ else
 		$admin_email = get_option( 'admin_email' );
 	?>
 	<form id="ux_frm_email" class="layout-form" style="max-width:1000px;">
-	<div id="form_success_message" class="custom-message green" style="display: none;">
-		<span>
-			<strong><?php _e("Settings has been successfully saved.", mail_bank); ?></strong>
-		</span>
-	</div>
+		<div id="message" class="top-right message" style="display: none;">
+			<div class="message-notification"></div>
+			<div class="message-notification ui-corner-all growl-success" >
+				<div onclick="message_close();" id="close-message" class="message-close">x</div>
+				<div class="message-header"><?php _e("Success!",  mail_bank); ?></div>
+				<div class="message-message"><?php _e("Settings has been successfully saved.",  mail_bank); ?></div>
+			</div>
+		</div>
 		<div class="fluid-layout">
 			<div class="layout-span12 responsive">
 				<div class="widget-layout">
@@ -311,21 +314,31 @@ jQuery("#ux_frm_email").validate
 	},
 	submitHandler: function(form)
 	{
-		jQuery("body").css("opacity",".5");
-		var overlay = jQuery("<div class=\"processing_overlay\"></div>");
+		var overlay_opacity = jQuery("<div class=\"opacity_overlay\"></div>");
+		jQuery("body").append(overlay_opacity);
+		var overlay = jQuery("<div class=\"loader_opacity\"><div class=\"processing_overlay\"></div></div>");
 		jQuery("body").append(overlay);
 		
 		var password= encodeURIComponent(jQuery("#ux_txt_password").val());
 		jQuery("#form_success_message").css("display","block");
 		jQuery.post(ajaxurl, jQuery(form).serialize() +"&password="+password+"&param=add_mail_detail&action=add_mail_library", function(data)
 		{
-			jQuery(".processing_overlay").remove();
-			jQuery("body").css("opacity","1");
-			window.location.reload();
+			setTimeout(function () {
+				jQuery("#message").css("display", "block");
+				jQuery(".loader_opacity").remove();
+				jQuery(".opacity_overlay").remove();
+			}, 2000);
+			setTimeout(function () {
+				jQuery("#message").css("display", "none");
+				window.location.reload();
+			}, 4000)
 		});
 	}
 });
-
+function message_close()
+{
+	jQuery("#message").css("display", "none");
+}
  function backup_rdl ()
  {
  	var value = jQuery("#ux_rdl_on").prop("checked");

@@ -40,21 +40,6 @@
 	font-family:  "Droid Sans",Helvetica,Arial,Verdana,sans-serif;
 	margin-bottom:2px !important;
 }
-	
-div.processing_overlay 
-{
-    
-    background: url(../images/loading.gif) no-repeat scroll center center transparent;
-	display: inline-block;
-	height: 100%;
-	line-height: 1px;
-	text-align: center;
-	width: 100%;
-	position: absolute;
-	top: 50%;
-	
-	left: 0;
-}
 .message_mail
 {
 	z-index: 9999;

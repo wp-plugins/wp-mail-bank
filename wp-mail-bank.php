@@ -4,7 +4,7 @@ Plugin Name: Wp Mail Bank
 Plugin URI: http://tech-banker.com
 Description: WP Mail Bank reconfigures the wp_mail() function and make it more enhanced.
 Author: Tech Banker
-Version: 1.4
+Version: 1.5
 Author URI: http://tech-banker.com
 */
 
@@ -53,7 +53,6 @@ function backend_plugin_css_scripts_mail_bank()
 {
 	wp_enqueue_style("framework.css", plugins_url("/assets/css/framework.css",__FILE__));
 	wp_enqueue_style("wp-mail-bank.css", plugins_url("/assets/css/wp-mail-bank.css",__FILE__));
-	wp_enqueue_style("system-message.css", plugins_url("/assets/css/system-message.css",__FILE__));
 }
 
 function wp_mail_bank_configure($phpmailer) 
