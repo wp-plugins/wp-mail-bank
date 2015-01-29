@@ -2,7 +2,7 @@
 Contributors: contact-banker, Gallery-Bank
 Tags: admin, ajax, email, gmail, mail, mail smtp, mailer, outgoing mail, phpmailer, plugin, Post, posts, privacy, security, sendmail, smtp, ssl, tls, wordpress smtp, wp smtp, wp-phpmailer, wp_mail, wp mail, mailer
 Requires at least: 2.7
-Tested up to: 4.0.1
+Tested up to: 4.1
 Stable tag: 1.8
 
 WP Mail Bank reconfigures the PHPMailer and make it more enhanced with advanced smtp settings options.
@@ -15,9 +15,7 @@ This plugin reconfigures the wp_mail() function nd make it more enhanced to use 
 
 The Plugin has options to choose between your custom smtp server or the inbuilt phpmailer.
 
-###IMPORTANT: If you think you found a bug in WP Mail Bank or have any problem or question concerning WP Mail Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com).  
-
-***August 23, 2014: We're happy to announce that WP Mail Bank reached 2400+ plugin downloads in only 3 weeks. We frequently receive positive feedback from people using our WP Mail Bank Plugin for WordPress. Thanks so much for your support!***
+###IMPORTANT: If you think you found a bug in WP Mail Bank or have any problem or question concerning WP Mail Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com). 
 
 ###Key Features :
 
