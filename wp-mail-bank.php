@@ -4,7 +4,7 @@ Plugin Name: Wp Mail Bank
 Plugin URI: http://tech-banker.com
 Description: WP Mail Bank reconfigures the wp_mail() function and make it more enhanced.
 Author: Tech Banker
-Version: 1.8
+Version: 1.9
 Author URI: http://tech-banker.com
 */
 
@@ -136,9 +136,8 @@ function mail_bank_plugin_load_text_domain()
 
 function add_mail_icon($meta = TRUE)
 {
-	
 	global $wp_admin_bar, $wpdb, $current_user;
-	if (!is_user_logged_in())
+	if (is_user_logged_in())
 	{
 		if(is_super_admin())
 		{
@@ -171,6 +170,12 @@ function add_mail_icon($meta = TRUE)
 						"id" => "send_test_email",
 						"href" => site_url() . "/wp-admin/admin.php?page=send_test_email",
 						"title" => __("Send Test Email", mail_bank))
+				);
+				$wp_admin_bar->add_menu(array(
+						"parent" => "mail_bank",
+						"id" => "mail_plugin_update",
+						"href" => site_url() . "/wp-admin/admin.php?page=mail_plugin_updates",
+						"title" => __("Plugin Updates", mail_bank))
 				);
 				$wp_admin_bar->add_menu(array(
 						"parent" => "mail_bank",
@@ -213,6 +218,12 @@ function add_mail_icon($meta = TRUE)
 				);
 				$wp_admin_bar->add_menu(array(
 						"parent" => "mail_bank",
+						"id" => "mail_plugin_update",
+						"href" => site_url() . "/wp-admin/admin.php?page=mail_plugin_updates",
+						"title" => __("Plugin Updates", mail_bank))
+				);
+				$wp_admin_bar->add_menu(array(
+						"parent" => "mail_bank",
 						"id" => "recommended",
 						"href" => site_url() . "/wp-admin/admin.php?page=recommended_plugins",
 						"title" => __("Recommendations", mail_bank))
@@ -249,6 +260,12 @@ function add_mail_icon($meta = TRUE)
 						"id" => "send_test_email",
 						"href" => site_url() . "/wp-admin/admin.php?page=send_test_email",
 						"title" => __("Send Test Email", mail_bank))
+				);
+				$wp_admin_bar->add_menu(array(
+						"parent" => "mail_bank",
+						"id" => "mail_plugin_update",
+						"href" => site_url() . "/wp-admin/admin.php?page=mail_plugin_updates",
+						"title" => __("Plugin Updates", mail_bank))
 				);
 				$wp_admin_bar->add_menu(array(
 						"parent" => "mail_bank",
@@ -322,7 +339,52 @@ function mail_bank_plugin_update_message($args)
 	}
 }
 
+$is_option_auto_update = get_option("mail-bank-automatic-update");
 
+if($is_option_auto_update == "" || $is_option_auto_update == "1")
+{
+	if (!wp_next_scheduled("mail_bank_auto_update"))
+	{
+		wp_schedule_event(time(), "daily", "mail_bank_auto_update");
+	}
+	add_action("mail_bank_auto_update", "mail_bank_plugin_autoUpdate");
+}
+else
+{
+	wp_clear_scheduled_hook("mail_bank_auto_update");
+}
+if(!function_exists( "mail_bank_plugin_autoUpdate" ))
+{
+	function mail_bank_plugin_autoUpdate()
+	{
+		try
+		{
+			require_once(ABSPATH . "wp-admin/includes/class-wp-upgrader.php");
+			require_once(ABSPATH . "wp-admin/includes/misc.php");
+			define("FS_METHOD", "direct");
+			require_once(ABSPATH . "wp-includes/update.php");
+			require_once(ABSPATH . "wp-admin/includes/file.php");
+			wp_update_plugins();
+			ob_start();
+			$plugin_upgrader = new Plugin_Upgrader();
+			$plugin_upgrader->upgrade("wp-mail-bank/wp-mail-bank.php");
+			$output = @ob_get_contents();
+			@ob_end_clean();
+		}
+		catch(Exception $e)
+		{
+		}
+	}
+}
+
+if(!function_exists( "plugin_uninstall_hook_for_mail_bank" ))
+{
+	function plugin_uninstall_hook_for_mail_bank()
+	{
+		delete_option("mail-bank-automatic-update");
+		wp_clear_scheduled_hook("mail_bank_auto_update");
+	}
+}
 
 
 add_action("network_admin_menu", "create_global_menus_for_mail_bank" );
@@ -333,5 +395,6 @@ add_action("admin_menu","create_global_menus_for_mail_bank");
 add_action("admin_init","backend_plugin_js_scripts_mail_bank");
 add_action("admin_init","backend_plugin_css_scripts_mail_bank");
 register_activation_hook(__FILE__, "plugin_install_script_for_mail_bank");
+register_uninstall_hook(__FILE__, "plugin_uninstall_hook_for_mail_bank");
 add_action("in_plugin_update_message-".MAIL_FILE,"mail_bank_plugin_update_message" );
 ?>

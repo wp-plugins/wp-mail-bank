@@ -37,7 +37,7 @@ else
 			{
 				$insert = new save_data();
 				$email_setup = array();
-				$email_setup["from_name"] = esc_attr($_REQUEST["ux_email_from_name"]);
+				$email_setup["from_name"] = htmlspecialchars_decode(esc_attr($_REQUEST["from_name"]));
 				$email_setup["from_email"] = esc_attr($_REQUEST["ux_email_from_email"]);
 				$email_setup["mailer_type"] = intval($_REQUEST["ux_rdl_ends"]);
 				$email_setup["return_path"] = isset($_REQUEST["ux_chk_return_path"]) ? intval($_REQUEST["ux_chk_return_path"]) : 0;
@@ -94,6 +94,15 @@ else
 					echo $result;
 				}
 				die();
+			}
+			elseif($_REQUEST["param"] == "mail_bank_plugin_updates")
+			{
+				if(wp_verify_nonce( $_REQUEST["_wpnonce"], "update_plugin_nonce"))
+				{
+					$plugin_update = esc_attr($_REQUEST["mail_bank_updates"]);
+					update_option("mail-bank-automatic-update",$plugin_update);
+					die();
+				}
 			}
 		}
 	}

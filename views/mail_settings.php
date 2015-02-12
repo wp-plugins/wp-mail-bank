@@ -24,6 +24,8 @@ else
 			"SELECT * FROM ".wp_mail_bank()
 		);
 		$admin_email = get_option( 'admin_email' );
+		echo stripcslashes(htmlspecialchars_decode($email_data->from_name));
+		
 	?>
 	<form id="ux_frm_email" class="layout-form" style="max-width:1000px;">
 		<div id="message" class="top-right message" style="display: none;">
@@ -44,7 +46,7 @@ else
 							<div class="layout-control-group">
 								<label class="layout-control-label"><?php _e("From Name", mail_bank); ?> : <span class="error">*</span></label>
 								<div class="layout-controls">
-									<input type="text" name="ux_email_from_name" class="layout-span12" id="ux_email_from_name" placeholder="Please enter your From Name" value="<?php echo isset($email_data->from_name) ? $email_data->from_name : "WordPress" ;?>"/><br>
+									<input type="text" name="ux_email_from_name" class="layout-span12" id="ux_email_from_name" placeholder="Please enter your From Name" value="<?php echo isset($email_data->from_name) ? stripcslashes(htmlspecialchars_decode($email_data->from_name)) : "WordPress" ;?>"/><br>
 									<p class="wpib-desc-italic"><?php _e("You can specify the name that emails should be sent from.", mail_bank); ?></p>
 								</div>
 							</div>
@@ -320,8 +322,9 @@ jQuery("#ux_frm_email").validate
 		jQuery("body").append(overlay);
 		
 		var password= encodeURIComponent(jQuery("#ux_txt_password").val());
+		var from_name= encodeURIComponent(jQuery("#ux_email_from_name").val());	
 		jQuery("#form_success_message").css("display","block");
-		jQuery.post(ajaxurl, jQuery(form).serialize() +"&password="+password+"&param=add_mail_detail&action=add_mail_library", function(data)
+		jQuery.post(ajaxurl, jQuery(form).serialize() +"&password="+password+"&from_name="+from_name+"&param=add_mail_detail&action=add_mail_library", function(data)
 		{
 			setTimeout(function () {
 				jQuery("#message").css("display", "block");
