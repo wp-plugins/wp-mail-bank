@@ -64,7 +64,7 @@ function wp_mail_bank_configure($phpmailer)
 	);
 	$mail_type = $data->mailer_type;
 	$phpmailer->Mailer = $data->mailer_type == 0 ? "smtp" : "mail"; 
-	$phpmailer->FromName = $data->from_name;
+	$phpmailer->FromName = stripslashes(htmlspecialchars_decode($data->from_name, ENT_QUOTES));
 	$phpmailer->From = $data->from_email;
 	$phpmailer->Sender =  $data->return_path == 0 ? $data->return_email : $data->from_email;
 	$phpmailer->WordWrap = $data->word_wrap;
