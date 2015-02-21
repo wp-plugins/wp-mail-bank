@@ -114,7 +114,6 @@ else
 				},
 				function (data)
 				{
-					alert(data);
 					setTimeout(function () {
 						jQuery(".loader_opacity").remove();
 						jQuery(".opacity_overlay").remove();
