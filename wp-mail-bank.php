@@ -4,7 +4,7 @@ Plugin Name: Wp Mail Bank
 Plugin URI: http://tech-banker.com
 Description: WP Mail Bank reconfigures the wp_mail() function and make it more enhanced.
 Author: Tech Banker
-Version: 1.9
+Version: 1.10
 Author URI: http://tech-banker.com
 */
 
@@ -179,6 +179,12 @@ function add_mail_icon($meta = TRUE)
 				);
 				$wp_admin_bar->add_menu(array(
 						"parent" => "mail_bank",
+						"id" => "mail_feedback_link",
+						"href" => site_url() . "/wp-admin/admin.php?page=mail_feature_requests",
+						"title" => __("Feature Requests", mail_bank))
+				);
+				$wp_admin_bar->add_menu(array(
+						"parent" => "mail_bank",
 						"id" => "recommended",
 						"href" => site_url() . "/wp-admin/admin.php?page=recommended_plugins",
 						"title" => __("Recommendations", mail_bank))
@@ -224,6 +230,12 @@ function add_mail_icon($meta = TRUE)
 				);
 				$wp_admin_bar->add_menu(array(
 						"parent" => "mail_bank",
+						"id" => "mail_feedback_link",
+						"href" => site_url() . "/wp-admin/admin.php?page=mail_feature_requests",
+						"title" => __("Feature Requests", mail_bank))
+				);
+				$wp_admin_bar->add_menu(array(
+						"parent" => "mail_bank",
 						"id" => "recommended",
 						"href" => site_url() . "/wp-admin/admin.php?page=recommended_plugins",
 						"title" => __("Recommendations", mail_bank))
@@ -266,6 +278,12 @@ function add_mail_icon($meta = TRUE)
 						"id" => "mail_plugin_update",
 						"href" => site_url() . "/wp-admin/admin.php?page=mail_plugin_updates",
 						"title" => __("Plugin Updates", mail_bank))
+				);
+				$wp_admin_bar->add_menu(array(
+						"parent" => "mail_bank",
+						"id" => "mail_feedback_link",
+						"href" => site_url() . "/wp-admin/admin.php?page=mail_feature_requests",
+						"title" => __("Feature Requests", mail_bank))
 				);
 				$wp_admin_bar->add_menu(array(
 						"parent" => "mail_bank",
@@ -385,7 +403,6 @@ if(!function_exists( "plugin_uninstall_hook_for_mail_bank" ))
 		wp_clear_scheduled_hook("mail_bank_auto_update");
 	}
 }
-
 
 add_action("network_admin_menu", "create_global_menus_for_mail_bank" );
 add_action("admin_bar_menu", "add_mail_icon",100);

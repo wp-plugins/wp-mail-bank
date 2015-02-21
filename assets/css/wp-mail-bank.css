@@ -45,3 +45,45 @@
 	z-index: 9999;
 	
 }
+.custom-message {
+    position: relative;
+    display: inline-block;
+    margin: 20px 0 0 0;
+    padding: 0 0 0 35px;
+    -moz-box-shadow: 1px 1px 0 #e6e6e6;
+    -webkit-box-shadow: 1px 1px 0 #e6e6e6;
+    box-shadow: 1px 1px 0 #e6e6e6;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color='#e6e6e6')";
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=1, Direction=135, Color='#e6e6e6');
+    zoom: 1;
+}
+
+.custom-message:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+.custom-message span {
+    display: block;
+    /*background : url(../images/system-icon.png) no-repeat 98% center;*/
+    padding: 13px 0;
+    font: 12px/1.0em Arial;
+}
+
+.custom-message.inner {
+    margin: 0 0 20px;
+}
+
+.custom-message.red {
+    display: block;
+    background : #F8E9E9;
+    border: 1px solid #E4BBBC;
+    color: #b80000;
+}
+
+.custom-message.green {
+    display: block;
+    background: url(../images/icons/icon-succes.png) no-repeat 1px 8px #EBF9E2;
+    border: 1px solid #BEE4A5;
+    color: #6aa500;
+}

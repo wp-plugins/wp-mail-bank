@@ -24,7 +24,6 @@ else
 			"SELECT * FROM ".wp_mail_bank()
 		);
 		$admin_email = get_option( 'admin_email' );
-		echo stripcslashes(htmlspecialchars_decode($email_data->from_name));
 		
 	?>
 	<form id="ux_frm_email" class="layout-form" style="max-width:1000px;">
