@@ -360,7 +360,7 @@ function mail_bank_plugin_update_message($args)
 
 $is_option_auto_update = get_option("mail-bank-automatic-update");
 
-if($is_option_auto_update == "" || $is_option_auto_update == "1")
+if($is_option_auto_update === "" || $is_option_auto_update == "1")
 {
 	if (!wp_next_scheduled("mail_bank_auto_update"))
 	{
